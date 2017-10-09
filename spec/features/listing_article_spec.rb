@@ -7,7 +7,7 @@ RSpec.feature "Creating Articles" do
   end
   
   scenario "A use lists all articles" do
-    vist "/"
+    visit "/"
     expect(page).to have_content(@article1.title)
     expect(page).to have_content(@article1.body)
     expect(page).to have_content(@article2.title)
@@ -26,7 +26,7 @@ RSpec.feature "Creating Articles" do
     expect(page).not_to have_content(@article2.title)
     expect(page).not_to have_content(@article2.body)
     expect(page).not_to have_link(@article1.title)
-    expect(page).not_to have_linl(@article2.title)
+    expect(page).not_to have_link(@article2.title)
     
     within ("h1#no-articles") do
       expect(page).to have_content("No Articles Created")
